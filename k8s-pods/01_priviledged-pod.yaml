@@ -6,7 +6,7 @@ metadata:
     app: privileged
 spec:
   containers:
-  - name: ernw-privileged-pod
+  - name: privileged-pod
     image: docker.io/nodyd/ana:latest
     imagePullPolicy: Always
     securityContext:

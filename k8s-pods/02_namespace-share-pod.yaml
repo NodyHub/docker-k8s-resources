@@ -10,17 +10,9 @@ spec:
   hostUTS: true
   hostNetwork: true
   containers:
-  - name: normal-deployment-jh
-    image: docker.io/ernw/user:latest
+  - name: namespace-share
+    image: docker.io/nodyd/ana:latest
     imagePullPolicy: Always
     securityContext:
       privileged: true
-    volumeMounts:
-    - mountPath: /host-etc
-      name: host-etc
   restartPolicy: OnFailure
-  volumes:
-  - name: host-etc
-    hostPath:
-      path: /etc
-      type: Directory
