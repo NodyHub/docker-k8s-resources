@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: namespace-share
+  labels:
+    purpose: testing
+spec:
+  hostPID: true
+  hostIPC: true
+  hostUTS: true
+  hostNetwork: true
+  containers:
+  - name: normal-deployment-jh
+    image: docker.io/ernw/user:latest
+    imagePullPolicy: Always
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /host-etc
+      name: host-etc
+  restartPolicy: OnFailure
+  volumes:
+  - name: host-etc
+    hostPath:
+      path: /etc
+      type: Directory

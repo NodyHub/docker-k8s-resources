@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: com
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: www
+  name: www
+  namespace: com
+spec:
+  containers:
+  - image: docker.io/nodyd/hello:latest
+    name: www
+  - image: docker.io/nodyd/ssl-fwd:latest
+    name: https
+    imagePullPolicy: Always
+    env:
+    - name: DOMAIN
+      value: www.google.com
+    - name: LISTEN
+      value: "443"
+    - name: TARGET
+      value: "127.0.0.1:80"
+  hostname: www
+  subdomain: google
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: google
+  namespace: com
+spec:
+  clusterIP: None
+  ports:
+  - name: http
+    port: 80
+  - name: https
+    port: 443
+  selector:
+    name: www
+  type: ClusterIP

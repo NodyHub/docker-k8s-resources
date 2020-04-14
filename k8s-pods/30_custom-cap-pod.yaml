@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: custom-cap
+  labels:
+    app: custom-cap
+spec:
+  containers:
+  - name: custom-cap
+    image: docker.io/nodyd/ana:latest
+    imagePullPolicy: Always
+    securityContext:
+      capabilities:
+        add: ["CAP_SYS_MODULE"]
+  restartPolicy: OnFailure

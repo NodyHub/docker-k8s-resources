@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: se-linux
+  labels:
+    app: se-linux
+  annotations:
+    container.apparmor.security.beta.kubernetes.io/foobar: runtime/default
+    container.apparmor.security.beta.kubernetes.io/se-linux: unconfined
+spec:
+  containers:
+  - name: se-linux
+    image: docker.io/nodyd/ana:latest
+    imagePullPolicy: Always
+  - name: foobar
+    image: ubuntu:latest
+    command: ["sleep"]
+    args: ["infinity"]
+  restartPolicy: OnFailure

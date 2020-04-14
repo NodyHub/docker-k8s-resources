@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: com
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: gist
+  name: gist
+  namespace: com
+spec:
+  containers:
+  - image: docker.io/nodyd/hello:latest
+    name: gist
+    imagePullPolicy: Always
+  - image: docker.io/nodyd/ssl-fwd:latest
+    name: https
+    imagePullPolicy: Always
+    env:
+    - name: DOMAIN
+      value: gist.github.com
+    - name: LISTEN
+      value: "443"
+    - name: TARGET
+      value: "127.0.0.1:80"
+  subdomain: github
+  hostname: gist
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: github
+  namespace: com
+spec:
+  clusterIP: None
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+  selector:
+    name: gist

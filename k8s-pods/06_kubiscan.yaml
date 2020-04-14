@@ -1,0 +1,58 @@
+# RUN: python3 /KubiScan/KubiScan.py -ho $KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT -c /var/run/secrets/kubernetes.io/serviceaccount/ca.crt -t /var/run/secrets/kubernetes.io/serviceaccount/token
+
+
+
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kubiscan-sa
+  namespace: default
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata: 
+  name: kubiscan-clusterrolebinding
+subjects: 
+- kind: ServiceAccount 
+  name: kubiscan-sa
+  namespace: default
+  apiGroup: ""
+roleRef: 
+  kind: ClusterRole
+  name: kubiscan-clusterrole
+  apiGroup: ""
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata: 
+  name: kubiscan-clusterrole
+rules: 
+- apiGroups: ["*"]
+  resources: ["roles", "clusterroles", "rolebindings", "clusterrolebindings", "pods", "secrets"]
+  verbs: ["get", "list"]
+- apiGroups: ["*"]
+  resources: ["pods/exec"]
+  verbs: ["create", "get"]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: kubiscan
+  name: kubiscan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: kubiscan
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: kubiscan
+    spec:
+      containers:
+      - image: docker.io/nodyd/kubiscan
+        name: kubiscan
+      serviceAccountName: kubiscan-sa

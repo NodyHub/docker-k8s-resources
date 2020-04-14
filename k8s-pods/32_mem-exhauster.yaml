@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: alloc
+  name: alloc
+spec:
+  selector:
+    matchLabels:
+      run: alloc
+  template:
+    metadata:
+      labels:
+        run: alloc
+    spec:
+      containers:
+      - image: docker.io/nodyd/alloc:latest
+        imagePullPolicy: Always
+        env:
+        - name: MEGABYTES
+          value: "200"
+        name: alloc
+        resources:
+          limits:
+            memory: "300Mi"
+          requests:
+            memory: "300Mi"
+      restartPolicy: Always

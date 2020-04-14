@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: root-fs-volume
+  labels:
+    purpose: testing
+spec:
+  containers:
+  - name: root-fs-volume
+    image: docker.io/nodyd/ana:latest
+    imagePullPolicy: Always
+    volumeMounts:
+    - mountPath: /hostroot
+      name: host-dir
+  restartPolicy: OnFailure
+  volumes:
+  - name: host-dir
+    hostPath:
+      path: /proc/self/root
+      type: Directory
