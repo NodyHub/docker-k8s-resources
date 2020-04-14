@@ -42,13 +42,13 @@ The following resources are from time-to-time refred in lectures, workshops or t
 ## Docker Images
 A collection of Docker images for testing, hacking and building purposes 
 
-- [amass](amass/) – [OWASP Amass](https://github.com/OWASP/Amass) in a container image on Docker Hub ([nodyd/amass](https://hub.docker.com/r/nodyd/amass))
-- [ami](ami/) – [amicontained](https://github.com/genuinetools/amicontained) in a container image on Docker Hub ([nodyd/ami](https://hub.docker.com/r/nodyd/ami))
-- [ana](ana/) – Container environment analysis tool in an image, pre-build on Docke Hub ([nodyd/ana](https://hub.docker.com/r/nodyd/ana))
-- [botb](botb/) – [Break out the Box (BOtB)](https://github.com/brompwnie/botb) in a container image, pre-build on Docke Hub ([nodyd/botb](https://hub.docker.com/r/nodyd/botb))
-- [crtsh](crtsh/) – Docker image that crawls the content from crt.sh, pre-build on Docker Hub ([nodyd/crtsh](https://hub.docker.com/r/nodyd/botb))
-- [hello](hello/) – Docker image that offers a simple webpage, pre-build on Docker Hub ([nodyd/hello](https://hub.docker.com/r/nodyd/hello))
-- [httprobe](httprobe/) – Docker image that probes webserver, pre-build on Docker Hub ([nodyd/httprobe](https://hub.docker.com/r/nodyd/httprobe))
-- [kubiscan](kubiscan) – [KubiScan](https://github.com/cyberark/KubiScan) in a container image, pre-build on Docker Hub ([nodyd/kubiscan](https://hub.docker.com/r/nodyd/kubiscan))
-- [ssh](ssh/) – Docker image that starts a SSH daemon on startup as user, prebuild on Docker Hub ([nodyd/ssh](https://hub.docker.com/r/nodyd/ssh))
-- [ssl-fwd](ssl-fwd/) – Socat in a container that wraps TLS arround another port, pre-build on Docker Hub ([nodyd/ssl-fwd](https://hub.docker.com/r/nodyd/ssl-fwd))
+- [amass](docker-images/amass/) – [OWASP Amass](https://github.com/OWASP/Amass) in a container image on Docker Hub ([nodyd/amass](https://hub.docker.com/r/nodyd/amass))
+- [ami](docker-images/ami/) – [amicontained](https://github.com/genuinetools/amicontained) in a container image on Docker Hub ([nodyd/ami](https://hub.docker.com/r/nodyd/ami))
+- [ana](docker-images/ana/) – Container environment analysis tool in an image, pre-build on Docke Hub ([nodyd/ana](https://hub.docker.com/r/nodyd/ana))
+- [botb](docker-images/botb/) – [Break out the Box (BOtB)](https://github.com/brompwnie/botb) in a container image, pre-build on Docke Hub ([nodyd/botb](https://hub.docker.com/r/nodyd/botb))
+- [crtsh](docker-images/crtsh/) – Docker image that crawls the content from crt.sh, pre-build on Docker Hub ([nodyd/crtsh](https://hub.docker.com/r/nodyd/botb))
+- [hello](docker-images/hello/) – Docker image that offers a simple webpage, pre-build on Docker Hub ([nodyd/hello](https://hub.docker.com/r/nodyd/hello))
+- [httprobe](docker-images/httprobe/) – Docker image that probes webserver, pre-build on Docker Hub ([nodyd/httprobe](https://hub.docker.com/r/nodyd/httprobe))
+- [kubiscan](docker-images/kubiscan) – [KubiScan](https://github.com/cyberark/KubiScan) in a container image, pre-build on Docker Hub ([nodyd/kubiscan](https://hub.docker.com/r/nodyd/kubiscan))
+- [ssh](docker-images/ssh/) – Docker image that starts a SSH daemon on startup as user, prebuild on Docker Hub ([nodyd/ssh](https://hub.docker.com/r/nodyd/ssh))
+- [ssl-fwd](docker-images/ssl-fwd/) – Socat in a container that wraps TLS arround another port, pre-build on Docker Hub ([nodyd/ssl-fwd](https://hub.docker.com/r/nodyd/ssl-fwd))
