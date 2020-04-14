@@ -1,0 +1,8 @@
+Port                6667
+PermitRootLogin     yes
+AuthorizedKeysFile  .srv/authorized_keys
+AllowTcpForwarding  yes
+GatewayPorts        yes
+UseDNS              no
+HostKey             /home/ernw/.srv/magic_secret
+Subsystem           sftp /usr/lib/ssh/sftp-server

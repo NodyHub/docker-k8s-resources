@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: botb
+spec:
+  containers:
+  - image: nodyd/botb
+    name: botb

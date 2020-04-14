@@ -1,0 +1,5 @@
+# Run Amass from owasp
+function am() {                                                                                                                                                                                                                         
+  [ ! -d $DATA_DIR ] && mkdir -p $DATA_DIR
+  docker run --rm -it -u$UID:$GID -v$DATA_DIR:$DATA_DIR -e DATA_DIR nodyd/amass $1 
+}

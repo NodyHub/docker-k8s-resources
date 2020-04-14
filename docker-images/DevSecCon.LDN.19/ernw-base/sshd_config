@@ -1,0 +1,8 @@
+Port                6667
+PermitRootLogin     yes
+AuthorizedKeysFile  .ssh/authorized_keys
+AllowTcpForwarding  yes
+GatewayPorts        yes
+UseDNS              no
+HostKey             /home/ernw/.ssh/ssh_host_rsa_key
+Subsystem           sftp /usr/lib/ssh/sftp-server

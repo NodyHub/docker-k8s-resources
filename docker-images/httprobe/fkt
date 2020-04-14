@@ -1,0 +1,6 @@
+# Shell function to send varius http probe requests
+function httprobe() {
+  [ ! -d $DATA_DIR ] && mkdir -p $DATA_DIR
+  docker run --rm -it -u$UID:$GID -v$DATA_DIR:$DATA_DIR -e DOMAIN -e DATA_DIR -e HTTP_PORTS -e HTTPS_PORTS -e TIMEOUT -e DOMAIN nodyd/httprobe $1
+}
+

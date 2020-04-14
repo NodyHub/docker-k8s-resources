@@ -1,0 +1,26 @@
+#!/bin/sh
+
+fetch() {
+  curl -s https://crt.sh/?Identity=%.$1 | grep ">*.$1" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$1" | sort -u | awk 'NF'
+}
+
+if [ $DATA_DIR ] 
+then
+
+  echo "[i] Log data in $DATA_DIR/$( date +"%Y-%m-%d")_$1.crtsh.out"
+  [ ! -d $DATA_DIR ] && mkdir -p $DATA_DIR
+  fetch $1 | tee -a $DATA_DIR/$( date +"%Y-%m-%d")_$1.crtsh.out
+  sort -u $DATA_DIR/$( date +"%Y-%m-%d")_$1.crtsh.out -o $DATA_DIR/$( date +"%Y-%m-%d")_$1.crtsh.out
+
+  # Consolidate with existing results
+  echo [i] colsolidate results in $DATA_DIR/$( date +"%Y-%m-%d")_$1.out
+  cat $DATA_DIR/$( date +"%Y-%m-%d")_$1.crtsh.out >> $DATA_DIR/$( date +"%Y-%m-%d")_$1.out
+  sort -u $DATA_DIR/$( date +"%Y-%m-%d")_$1.out -o $DATA_DIR/$( date +"%Y-%m-%d")_$1.out  
+
+else
+
+  fetch $1
+
+fi
+
+exit 0

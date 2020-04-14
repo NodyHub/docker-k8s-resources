@@ -1,0 +1,5 @@
+export HTTP_PORTS="80 8080"
+export HTTPS_PORTS="443 6443 8443"
+export DATA_DIR=/home/user/data/osint
+export TIMEOUT=1
+export DOMAIN=""

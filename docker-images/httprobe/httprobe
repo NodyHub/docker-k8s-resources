@@ -1,0 +1,91 @@
+#!/bin/sh
+
+probe() {
+
+  curl -m ${TIMEOUT:-1} -k $1 -o /dev/null 2> /dev/null
+  [ $? -eq 0 ] && echo $1
+
+}
+
+check_ports () {
+  if [ ! -z "$HTTP_PORTS" ]
+  then
+    for PORT in $HTTP_PORTS;
+    do 
+      if [ "$PORT" -eq "80" ]
+      then
+        probe http://$1
+      else
+        probe http://$1:$PORT
+      fi
+    done
+  else
+    probe http://$1
+    probe http://$1:8080 
+  fi
+  
+  if [ ! -z "$HTTPS_PORTS" ]
+  then
+    for PORT in $HTTPS_PORTS;
+    do 
+      if [ "$PORT" -eq "443" ]
+      then
+        probe https://$1
+      else
+        probe https://$1:$PORT
+      fi
+    done
+  else
+    probe https://$1
+    probe https://$1:6443
+    probe https://$1:8443
+  fi
+}
+
+fetch () {
+  if [ -z $1 ]
+  then
+  
+    >&2 echo "[i] Parse stdin"
+    while read line
+    do
+      check_ports $line
+    done 
+  
+  elif [ -f $1 ]
+  then
+  
+    >&2 echo "[i] Parse from file (randomized) $1"
+    for i in `sed 's/^M$//' $1`;
+    do
+      check_ports $i
+    done 
+  
+  else 
+  
+    >&2 echo "[i] Probe direct"
+    check_ports $1
+  
+  fi
+}
+
+if [ $DATA_DIR ]
+then
+
+  if [ -z $DOMAIN ]
+  then 
+    FILENAME=$DATA_DIR/$( date +"%Y-%m-%d")_httpprobe.out
+  else
+    FILENAME=$DATA_DIR/$( date +"%Y-%m-%d")_$DOMAIN.httpprobe.out
+  fi
+  echo "[i] Log data in $FILENAME"
+  [ ! -d $DATA_DIR ] && mkdir -p $DATA_DIR
+  fetch $1 | tee -a $FILENAME
+  sort -u $FILENAME -o $FILENAME
+
+else
+
+  fetch $1
+
+fi
+exit 0
