@@ -5,7 +5,7 @@ The image can be pulled from Docker Hub and started as following:
 docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/nodyd/bb
 ``` 
 
-*Disclaimer:* It's a massive sized image :-D
+*Disclaimer:* The image is massive big :D
 
 ## installed tools
 
