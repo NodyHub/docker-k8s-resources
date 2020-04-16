@@ -6,23 +6,41 @@ sudo apt-get -y upgrade
 export DEBIAN_FRONTEND noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
 
+sudo apt-get update
+sudo -E apt install -y \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      golang \
+      htop \
+      nload \
+      software-properties-common \
+      sudo \
+      git \
+      wget \
+      vim \
+      zsh 
 
-sudo -E apt-get install -y libcurl4-openssl-dev \
-                        libssl-dev \
-                        jq \
-                        ruby-full \
-                        libcurl4-openssl-dev libxml2 libxml2-dev libxslt1-dev ruby-dev build-essential libgmp-dev zlib1g-dev \
-                        build-essential libssl-dev libffi-dev python-dev \
-                        python-setuptools \
-                        libldns-dev \
-                        python3-pip \
-                        python-pip \
-                        python-dnspython \
-                        git \
-                        rename 
+sudo add-apt-repository ppa:longsleep/golang-backports
+sudo apt-get update && \
+sudo -E apt-get -y install \
+      build-essential \
+      golang-go \
+      jq \
+      libcurl4-openssl-dev \
+      libssl-dev \
+      libffi-dev 
+      libldns-dev \
+      python-dev \
+      python-setuptools \
+      python3-pip \
+      python-pip \
+      python-dnspython \
+      rename \
+      ruby-full \
+      git
 
-#Don't forget to set up AWS credentials!
-echo "Don't forget to set up AWS credentials!"
+echo "AWS cli"
 sudo -E apt install -y awscli
 echo "Don't forget to set up AWS credentials!"
 
