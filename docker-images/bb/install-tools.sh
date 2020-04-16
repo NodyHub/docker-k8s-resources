@@ -104,17 +104,17 @@ go get github.com/michenriksen/gitrob
 
 ###########################################################################
 # Install JSParser
-# TODO
+# TODO: broken
 ###########################################################################
 echo "Installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
-cd JSParser*
-sudo python setup.py install
+cd JSParser
+python setup.py install
 cd ~/git/
 
 ###########################################################################
 # Install EyeWitness
-# TODO
+# TODO: broken
 ###########################################################################
 echo "Install EyeWitness"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
