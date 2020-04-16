@@ -1,5 +1,12 @@
 # BugBounty Image
 
+The image can be pulled from Docker Hub and started as following:
+```
+docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/nodyd/bb
+``` 
+
+## installed tools
+
 Container image that contains following tools:
 
 - [Aquatone](https://github.com/michenriksen/aquatone)
@@ -27,3 +34,17 @@ Container image that contains following tools:
 - [virtual-host-discovery](https://github.com/jobertabma/virtual-host-discovery)
 - [wpscan](https://github.com/wpscanteam/wpscan)
 - [waybackurl](https://github.com/tomnomnom/waybackurls)
+
+
+## Todo
+
+Install:
+
+- https://github.com/OWASP/Amass
+- crtsh
+- https://github.com/devanshbatham/ParamSpider
+
+Further stuff:
+
+- Create proper zshrc with alias
+
