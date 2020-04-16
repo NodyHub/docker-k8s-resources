@@ -22,14 +22,14 @@ sudo -E apt install -y \
       zsh 
 
 sudo add-apt-repository ppa:longsleep/golang-backports
-sudo apt-get update && \
+sudo apt-get update
 sudo -E apt-get -y install \
       build-essential \
       golang-go \
       jq \
       libcurl4-openssl-dev \
       libssl-dev \
-      libffi-dev 
+      libffi-dev \
       libldns-dev \
       python-dev \
       python-setuptools \
@@ -63,13 +63,13 @@ pip install py-altdns
 echo "Installing asnlookup"
 git clone https://github.com/yassineaboukir/asnlookup.git
 cd asnlookup
-pip Install -r requirements.txt
+pip install -r requirements.txt
 cd ~/git/
 
 ###########################################################################
 # Install AWS cli
 ###########################################################################
-echo "install AWS cli"
+echo "Install AWS cli"
 sudo -E apt install -y awscli
 
 ###########################################################################
