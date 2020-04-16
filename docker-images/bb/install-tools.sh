@@ -40,33 +40,82 @@ sudo -E apt-get -y install \
       ruby-full \
       git
 
-echo "AWS cli"
-sudo -E apt install -y awscli
-echo "Don't forget to set up AWS credentials!"
 
 cd ~/git
 
-#install aquatone
+###########################################################################
+# Install aquatone
+###########################################################################
 echo "Installing Aquatone"
 go get github.com/michenriksen/aquatone
 sed -i 's/"--disable-notifications",/"--disable-notifications", "--no-sandbox",/g' ~/go/src/github.com/michenriksen/aquatone/agents/url_screenshotter.go
 go get github.com/michenriksen/aquatone
 
-#install chromium
+###########################################################################
+# Install altdns
+###########################################################################
+echo "Install altdns"
+pip install py-altdns
+
+###########################################################################
+# Install asnlookup
+###########################################################################
+echo "Installing asnlookup"
+git clone https://github.com/yassineaboukir/asnlookup.git
+cd asnlookup
+pip Install -r requirements.txt
+cd ~/git/
+
+###########################################################################
+# Install AWS cli
+###########################################################################
+echo "install AWS cli"
+sudo -E apt install -y awscli
+
+###########################################################################
+# Install chromium
+###########################################################################
 echo "Installing Chromium"
 sudo -E apt-get install -y chromium-browser
 
+###########################################################################
+# Install crtindustry
+###########################################################################
+echo "Installing crtndstry"
+git clone https://github.com/nahamsec/crtndstry.git
+
+###########################################################################
+# Install dirsearch
+###########################################################################
+echo "Installing dirsearch"
+git clone https://github.com/maurosoria/dirsearch.git
+
+###########################################################################
+# Install droopscan
+###########################################################################
+echo "Install droopscan"
+pip install droopescan
+
+###########################################################################
+# Install gitrob
+###########################################################################
+echo "Install gitrob"
+go get github.com/michenriksen/gitrob
+
+###########################################################################
+# Install JSParser
 # TODO
-echo "installing JSParser"
+###########################################################################
+echo "Installing JSParser"
 git clone https://github.com/nahamsec/JSParser.git
 cd JSParser*
 sudo python setup.py install
 cd ~/git/
 
-echo "install altdns"
-pip install py-altdns
-
+###########################################################################
+# Install EyeWitness
 # TODO
+###########################################################################
 echo "Install EyeWitness"
 git clone https://github.com/FortyNorthSecurity/EyeWitness.git
 cd EyeWitness/Python/setup/
@@ -74,6 +123,43 @@ sudo ./setup.sh
 mkdir -p /tmp/EyeWitness
 cd ~/git/
 
+###########################################################################
+# Install gobuster
+###########################################################################
+echo "Install gobuster"
+sudo go get github.com/OJ/gobuster
+
+###########################################################################
+# Install httprobe
+###########################################################################
+echo "Installing httprobe"
+go get -u github.com/tomnomnom/httprobe 
+
+###########################################################################
+# Install joomscan
+###########################################################################
+echo "Install joomscan"
+git clone https://github.com/rezasp/joomscan.git
+
+###########################################################################
+# install jsearch
+###########################################################################
+echo "Install jsearch"
+git clone https://github.com/incogbyte/jsearch.git
+cd jsearch
+pip3 install -r requirements.txt
+cd ~/git/
+
+###########################################################################
+# Install knock
+###########################################################################
+echo "Installing knock.py"
+git clone https://github.com/guelfoweb/knock.git
+cd ~/git/
+
+###########################################################################
+# Install LinkFinder
+###########################################################################
 echo "Install LinkFinder"
 git clone https://github.com/GerbenJavado/LinkFinder.git
 cd LinkFinder
@@ -81,96 +167,100 @@ pip3 install -r requirements.txt
 python setup.py install
 cd ~/git/
 
-echo "Install jsearch"
-git clone https://github.com/incogbyte/jsearch.git
-cd jsearch
-pip3 install -r requirements.txt
+###########################################################################
+# Install massdns
+###########################################################################
+echo "Installing massdns"
+git clone https://github.com/blechschmidt/massdns.git
+cd massdns
+make
 cd ~/git/
 
-echo "install masscan"
+###########################################################################
+# Install masscan
+###########################################################################
+echo "Install masscan"
 git clone https://github.com/robertdavidgraham/masscan
 cd masscan
 make
 sudo cp bin/masscan /usr/local/bin/
 cd ~/git/
 
+###########################################################################
+# Install nmap
+###########################################################################
+echo "Installing nmap"
+sudo -E apt-get install -y nmap
+
+###########################################################################
+# Install sqlmap
+###########################################################################
+echo "Installing sqlmap"
+git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+cd ~/git/
+
+###########################################################################
+# Install subjack
+###########################################################################
 echo "Install subjack"
 go get github.com/haccer/subjack
 
-echo "install gitrob"
-go get github.com/michenriksen/gitrob
-
-echo "install droopscan"
-pip install droopescan
-
-echo "iinstall joomscan"
-git clone https://github.com/rezasp/joomscan.git
-
-echo "installing Sublist3r"
+###########################################################################
+# Install Sublist3r
+###########################################################################
+echo "Installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
 cd Sublist3r*
 pip install -r requirements.txt
 cd ~/git/
 
-echo "installing teh_s3_bucketeers"
+###########################################################################
+# Install teh_s3_bucketeers
+###########################################################################
+echo "Installing teh_s3_bucketeers"
 git clone https://github.com/tomdev/teh_s3_bucketeers.git
 cd ~/git/
 
-echo "install gobuster"
-sudo go get github.com/OJ/gobuster
+###########################################################################
+# Install unfurl
+###########################################################################
+echo "Installing unfurl"
+go get -u github.com/tomnomnom/unfurl 
 
-echo "installing wpscan"
-sudo gem install wpscan
-
-echo "installing dirsearch"
-git clone https://github.com/maurosoria/dirsearch.git
-
-echo "installing virtual host discovery"
+###########################################################################
+# Install virtual-host-discovery
+###########################################################################
+echo "Installing virtual host discovery"
 git clone https://github.com/jobertabma/virtual-host-discovery.git
 cd ~/git/
 
-echo "installing sqlmap"
-git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
-cd ~/git/
+###########################################################################
+# Install wpscan
+###########################################################################
+echo "Installing wpscan"
+sudo gem install wpscan
 
-echo "installing knock.py"
-git clone https://github.com/guelfoweb/knock.git
-cd ~/git/
 
-echo "installing nmap"
-sudo -E apt-get install -y nmap
-
-echo "installing massdns"
-git clone https://github.com/blechschmidt/massdns.git
-cd massdns
-make
-cd ~/git/
-
-echo "installing asnlookup"
-git clone https://github.com/yassineaboukir/asnlookup.git
-cd asnlookup
-pip install -r requirements.txt
-cd ~/git/
-
-echo "installing httprobe"
-go get -u github.com/tomnomnom/httprobe 
-
-echo "installing unfurl"
-go get -u github.com/tomnomnom/unfurl 
-
-echo "installing waybackurls"
+###########################################################################
+# Install waybackurls
+###########################################################################
+echo "Installing waybackurls"
 go get github.com/tomnomnom/waybackurls
 
-echo "installing crtndstry"
-git clone https://github.com/nahamsec/crtndstry.git
 
-
-echo "get dot-files"
+###########################################################################
+# Setup dot-files
+###########################################################################
+echo "Get dot-files"
 git clone https://github.com/NodyHub/dot-files.git
 cd dot-files
 ./deploy.sh
 cd ~/git/
 
-# 
+###########################################################################
+# Clean up
+###########################################################################
+echo "Clean up"
+sudo apt autoremove -y
 
 exit 0

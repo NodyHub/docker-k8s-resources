@@ -14,6 +14,7 @@ Container image that contains following tools:
 - [Aquatone](https://github.com/michenriksen/aquatone)
 - [altdns](https://github.com/infosec-au/altdns)
 - [asnlookup](https://github.com/yassineaboukir/Asnlookup)
+- [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
 - [crtndstry](https://github.com/nahamsec/crtndstry)
 - [dirsearch](https://github.com/maurosoria/dirsearch)
