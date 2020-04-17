@@ -25,7 +25,7 @@ Container image that contains following tools:
 - [httprobe](https://github.com/tomnomnom/httprobe) ```cat domains.txt | httprobe | tee httprobe.out```
 - [joomscan](https://github.com/rezasp/joomscan)
 - [jsearch](https://github.com/incogbyte/jsearch)
-- [knock](https://github.com/guelfoweb/knock) ```knockpy -c knockpy.out <trgt.tld>```
+- [knockpy](https://github.com/guelfoweb/knock) ```knockpy -c <trgt.tld>```
 - [LinkFinder](https://github.com/GerbenJavado/LinkFinder)
 - [masscan](https://github.com/robertdavidgraham/masscan)
 - [massdns](https://github.com/blechschmidt/massdns)
