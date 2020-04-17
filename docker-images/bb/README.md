@@ -13,7 +13,7 @@ Container image that contains following tools:
 
 - [Aquatone](https://github.com/michenriksen/aquatone) ```cat domain.txt | aquatone -out /data/aquatone```
 - [altdns](https://github.com/infosec-au/altdns) ```altdns -i altdns.in -w /wordlists/altdns.txt -o altdns.out```
-- [Amass](https://github.com/OWASP/Amass) ```amass ???```
+- [Amass](https://github.com/OWASP/Amass) passive: ```amassp <trgt.tld> ???```
 - [asnlookup](https://github.com/yassineaboukir/Asnlookup) <- License key needed
 - [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
