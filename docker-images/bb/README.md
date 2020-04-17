@@ -19,7 +19,7 @@ Container image that contains following tools:
 - [crtndstry](https://github.com/nahamsec/crtndstry) <- Broken
 - [dirsearch](https://github.com/maurosoria/dirsearch)
 - [droopscan](https://github.com/droope/droopescan)
-- [gitrob](https://github.com/michenriksen/gitrob)
+- [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster)
 - [httprobe](https://github.com/tomnomnom/httprobe)
 - [joomscan](https://github.com/rezasp/joomscan)
