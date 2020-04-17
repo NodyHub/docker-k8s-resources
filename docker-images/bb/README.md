@@ -22,7 +22,7 @@ Container image that contains following tools:
 - [droopscan](https://github.com/droope/droopescan)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster)
-- [httprobe](https://github.com/tomnomnom/httprobe)
+- [httprobe](https://github.com/tomnomnom/httprobe) ```cat domains.txt | httprobe | tee httprobe.out```
 - [joomscan](https://github.com/rezasp/joomscan)
 - [jsearch](https://github.com/incogbyte/jsearch)
 - [knock](https://github.com/guelfoweb/knock) ```knockpy -c knockpy.out <trgt.tld>```
@@ -31,13 +31,13 @@ Container image that contains following tools:
 - [massdns](https://github.com/blechschmidt/massdns)
 - [Nmap](https://nmap.org/)
 - [subjack](https://github.com/haccer/subjack)
-- [Sublist3r](https://github.com/aboul3la/Sublist3r)
+- [Sublist3r](https://github.com/aboul3la/Sublist3r) ```sublist3r -d <domain.tld> -o sublist3r.out```
 - [sqlmap](https://github.com/sqlmapproject/sqlmap)
 - [teh_s3_bucketeers](https://github.com/tomdev/teh_s3_bucketeers)
-- [unfurl](https://github.com/tomnomnom/unfurl)
+- [unfurl](https://github.com/tomnomnom/unfurl) ```cat urls.txt | unfurl domains | tee domains.txt```
 - [virtual-host-discovery](https://github.com/jobertabma/virtual-host-discovery)
 - [wpscan](https://github.com/wpscanteam/wpscan)
-- [waybackurl](https://github.com/tomnomnom/waybackurls)
+- [waybackurl](https://github.com/tomnomnom/waybackurls) ```waybackurls domain.tld | tee waybackurls.out```
 
 
 ## Todo
