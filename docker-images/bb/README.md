@@ -18,7 +18,7 @@ Container image that contains following tools:
 - [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
 - [crtndstry](https://github.com/nahamsec/crtndstry) <- Broken
-- [dirsearch](https://github.com/maurosoria/dirsearch)
+- [dirsearch](https://github.com/maurosoria/dirsearch) ```dirsearch -u <url> -e <file-ext, e.g., php, asp, aspx, jsp, js, html, do, action>```
 - [droopscan](https://github.com/droope/droopescan)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster)
