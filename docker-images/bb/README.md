@@ -11,8 +11,8 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 
 Container image that contains following tools:
 
-- [Aquatone](https://github.com/michenriksen/aquatone)
-- [altdns](https://github.com/infosec-au/altdns)
+- [Aquatone](https://github.com/michenriksen/aquatone) ```cat domain.txt | aquatone -out /data/aquatone```
+- [altdns](https://github.com/infosec-au/altdns) ```altdns -i altdns.in -w /wordlists/altdns.txt -o altdns.out```
 - [asnlookup](https://github.com/yassineaboukir/Asnlookup) <- License key needed
 - [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
