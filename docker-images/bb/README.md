@@ -16,7 +16,7 @@ Container image that contains following tools:
 - [asnlookup](https://github.com/yassineaboukir/Asnlookup) <- License key needed
 - [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
-- [crtndstry](https://github.com/nahamsec/crtndstry)
+- [crtndstry](https://github.com/nahamsec/crtndstry) <- Broken
 - [dirsearch](https://github.com/maurosoria/dirsearch)
 - [droopscan](https://github.com/droope/droopescan)
 - [gitrob](https://github.com/michenriksen/gitrob)
