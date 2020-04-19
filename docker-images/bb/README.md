@@ -12,6 +12,13 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 
+## Additional wordlist
+
+### Files
+```
+/heapdump
+```
+
 ## installed tools
 
 Container image that contains following tools:
