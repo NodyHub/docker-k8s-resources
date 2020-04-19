@@ -11,6 +11,7 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 
 ## Additional wordlist
 
