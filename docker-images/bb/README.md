@@ -7,6 +7,11 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 
 *Disclaimer:* The image is massive big :D
 
+## Manual Stuff
+
+- https://github.com/Plazmaz/leaky-repo
+- https://github.com/swisskyrepo/PayloadsAllTheThings
+
 ## installed tools
 
 Container image that contains following tools:
@@ -49,4 +54,3 @@ Install:
 Further stuff:
 
 - Create proper zshrc with alias
-
