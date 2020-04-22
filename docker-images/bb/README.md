@@ -7,6 +7,39 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 
 *Disclaimer:* The image is massive big :D
 
+A recommended approach is to use the following shell function to start the container, e.g., `bbd $project`. The function creates automatically the directory `$HOME/bugbounty/targets/$project/<current_date>`. Whereas the directory `<current_date>` is the date when you start the container in format `YYYY-MM-DD`. 
+```
+# --------------------------------------------------------------------------------------------------------------------------
+# Start BB Docker Container
+# --------------------------------------------------------------------------------------------------------------------------
+function bbd() {
+  dictionaries=$HOME/bugbounty/resources/dictionaries
+  projects=$HOME/bugbounty/targets
+  if [ $1 ]
+  then
+    project=$projects/$1/$(date +%Y-%m-%d)
+  else
+    todays_project=$projects/undefined/$(date +%Y-%m-%d)
+  fi
+  # Create Directories if nrecessary
+  if [ ! -d $wordlists ] && mkdir -p $wordlists
+  if [ ! -d $todays_project ] && mkdir -p $todays_project
+  docker run -it --rm \
+    --mount "type=bind,src=$projects,dst=/all" \
+    --mount "type=bind,src=$todays_project,dst=/data" \
+    --mount "type=bind,src=$dictionaries,dst=/dict" \
+    --workdir /data \                                                                                                                                                                                                                         
+    --user "$(id -u):$(id -g)" \
+    docker.io/nodyd/bb:latest
+}
+```
+
+The smart feature of using this shell function is that following directories are at every start the same
+- `/data` is always pointing to the directoty `$project/<current_date>`
+- `/all` contains all projects that have been created, including all sub-directories
+- `/dict` is ment to share all wordlists that are used during target enumeration. You can manipulate this directory from every container and the content is shared between all container. Works like a charm, let me tell you ;)
+
+
 ## Manual Stuff
 
 - https://github.com/Plazmaz/leaky-repo
