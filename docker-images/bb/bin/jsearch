@@ -1,0 +1,5 @@
+#!/bin/sh
+
+python3 ~/git/jsearch/jsearch.py $*
+
+exit 0

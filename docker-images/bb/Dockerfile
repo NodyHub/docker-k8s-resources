@@ -18,6 +18,7 @@ RUN chmod 755 install-tools.sh && \
     chown -R $USERNAME:$USERNAME /home/$USERNAME/ 
 USER $USERNAME
 RUN ./install-tools.sh 
+COPY bin/ /home/$USERNAME/bin
 
 # yo! \m/
 WORKDIR /home/$USERNAME

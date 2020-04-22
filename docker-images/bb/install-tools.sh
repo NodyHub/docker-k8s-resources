@@ -18,6 +18,7 @@ sudo -E apt install -y \
       sudo \
       git \
       wget \
+      whois \
       vim \
       zsh 
 
@@ -71,6 +72,17 @@ cd ~/git/
 ###########################################################################
 echo "Install AWS cli"
 sudo -E apt install -y awscli
+
+###########################################################################
+# Install Amass
+###########################################################################
+echo "Installing Amass"
+mkdir amass
+cd amass
+wget https://github.com/OWASP/Amass/releases/download/v3.5.5/amass_v3.5.5_linux_amd64.zip
+unzip amass_v3.5.5_linux_amd64.zip
+sudo cp amass_*/amass /bin/amass
+cd ~/git
 
 ###########################################################################
 # Install chromium
@@ -155,6 +167,8 @@ cd ~/git/
 ###########################################################################
 echo "Installing knock.py"
 git clone https://github.com/guelfoweb/knock.git
+cd knock
+python setup.py install                                                                                                                                                                                                                       
 cd ~/git/
 
 ###########################################################################
@@ -210,8 +224,8 @@ go get github.com/haccer/subjack
 ###########################################################################
 echo "Installing Sublist3r"
 git clone https://github.com/aboul3la/Sublist3r.git
-cd Sublist3r*
-pip install -r requirements.txt
+cd Sublist3r
+python setup.py install --user
 cd ~/git/
 
 ###########################################################################

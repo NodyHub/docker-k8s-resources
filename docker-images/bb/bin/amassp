@@ -1,0 +1,19 @@
+#!/bin/sh
+
+echo "[i] Log data in $PWD/$1.amass.passive.out"
+
+# Collect data
+/bin/amass enum --passive -d $1 -json $PWD/$1.amass.passive.json.out
+
+# Extract from json results
+jq -M .name $PWD/$1.amass.passive.json.out | sed "s/\"//g" | tr -d '\015' | tee -a $PWD/$1.amass.passive.out
+
+# sort results
+sort -u $PWD/$1.amass.passive.out -o $PWD/$1.amass.passive.out
+
+# delete tmp file
+rm $PWD/$1.amass.passive.json.out
+
+# done
+exit 0
+
