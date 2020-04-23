@@ -252,15 +252,14 @@ cd ~/git/
 # Install wpscan
 ###########################################################################
 echo "Installing wpscan"
+sudo apt install curl git libcurl4-openssl-dev make zlib1g-dev gawk g++ gcc libreadline6-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 autoconf libgdbm-dev libncurses5-dev automake libtool bison pkg-config ruby ruby-bundler ruby-dev -y
 sudo gem install wpscan
-
 
 ###########################################################################
 # Install waybackurls
 ###########################################################################
 echo "Installing waybackurls"
 go get github.com/tomnomnom/waybackurls
-
 
 ###########################################################################
 # Setup dot-files
@@ -276,5 +275,6 @@ cd ~/git/
 ###########################################################################
 echo "Clean up"
 sudo apt autoremove -y
+
 
 exit 0

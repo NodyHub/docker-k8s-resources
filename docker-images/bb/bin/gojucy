@@ -1,0 +1,6 @@
+#!/bin/sh
+
+gobuster dir -w /dict/jucy.txt -r -e -u $*
+
+exit 0
+
