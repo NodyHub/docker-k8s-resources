@@ -50,6 +50,12 @@ The smart feature of using this shell function is that following directories are
 
 ## Manual Stuff
 
+Firefox Extensions:
+
+- https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/
+
+Other stuff
+
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
