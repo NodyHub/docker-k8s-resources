@@ -15,23 +15,31 @@ A recommended approach is to use the following shell function to start the conta
 function bbd() {
   dictionaries=$HOME/bugbounty/resources/dictionaries
   projects=$HOME/bugbounty/targets
+  hist_file=$projects/zsh-history
   if [ $1 ]
   then
-    project=$projects/$1/$(date +%Y-%m-%d)
+    todays_project=$projects/$1/$(date +%Y-%m-%d)
   else
     todays_project=$projects/undefined/$(date +%Y-%m-%d)
+  fi
+  if [ ! -f $hist_file ]
+  then
+    echo Create: $hist_file
+    touch $hist_file
   fi
   # Create Directories if nrecessary
   if [ ! -d $wordlists ] && mkdir -p $wordlists
   if [ ! -d $todays_project ] && mkdir -p $todays_project
   docker run -it --rm \
+    --mount "type=bind,src=$hist_file,dst=/home/hunter/.history" \
     --mount "type=bind,src=$projects,dst=/all" \
     --mount "type=bind,src=$todays_project,dst=/data" \
     --mount "type=bind,src=$dictionaries,dst=/dict" \
-    --workdir /data \                                                                                                                                                                                                                         
+    --workdir /data \
     --user "$(id -u):$(id -g)" \
     docker.io/nodyd/bb:latest
 }
+
 ```
 
 The smart feature of using this shell function is that following directories are at every start the same
@@ -41,6 +49,12 @@ The smart feature of using this shell function is that following directories are
 
 
 ## Manual Stuff
+
+Firefox Extensions:
+
+- https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/
+
+Other stuff
 
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
