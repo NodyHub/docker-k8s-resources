@@ -91,6 +91,9 @@ Container image that contains following tools:
 Install:
 - https://github.com/devanshbatham/ParamSpider
 - https://github.com/stevenvachon/broken-link-checker
+- https://github.com/s0md3v/Arjun
+- https://github.com/bridgecrewio/checkov
+- https://github.com/epinna/tplmap
 
 Further stuff:
 
