@@ -8,26 +8,17 @@ docker run -v $HOME/data:/data -v $HOME/wordlists:/wordlists --rm -it docker.io/
 *Disclaimer:* The image is massive big :D
 
 A recommended approach is to use the following shell function to start the container, e.g., `bbd $project`. The function creates automatically the directory `$HOME/bugbounty/targets/$project/<current_date>`. Whereas the directory `<current_date>` is the date when you start the container in format `YYYY-MM-DD`. 
-```
+```bash
 # --------------------------------------------------------------------------------------------------------------------------
 # Start BB Docker Container
 # --------------------------------------------------------------------------------------------------------------------------
 function bbd() {
+  if [ $1 ] && project_name=$1 || project_name="undefined"
   dictionaries=$HOME/bugbounty/resources/dictionaries
   projects=$HOME/bugbounty/targets
-  hist_file=$projects/zsh-history
-  if [ $1 ]
-  then
-    todays_project=$projects/$1/$(date +%Y-%m-%d)
-  else
-    todays_project=$projects/undefined/$(date +%Y-%m-%d)
-  fi
-  if [ ! -f $hist_file ]
-  then
-    echo Create: $hist_file
-    touch $hist_file
-  fi
-  # Create Directories if nrecessary
+  hist_file=$projects/$project_name/zsh-history
+  todays_project=$projects/$project_name/$(date +%Y-%m-%d)
+  if [ ! -f $hist_file ] && touch $hist_file
   if [ ! -d $wordlists ] && mkdir -p $wordlists
   if [ ! -d $todays_project ] && mkdir -p $todays_project
   docker run -it --rm \
