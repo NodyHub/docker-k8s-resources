@@ -47,18 +47,20 @@ Firefox Extensions:
 
 Other stuff
 
-- https://github.com/Plazmaz/leaky-repo
-- https://github.com/swisskyrepo/PayloadsAllTheThings
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 
-## Additional wordlist
+## Wordlist
+
+- https://github.com/danielmiessler/SecLists
+- https://github.com/Plazmaz/leaky-repo
+- https://github.com/swisskyrepo/PayloadsAllTheThings
 
 ### Files
 ```
 /heapdump
 ```
 
-## installed tools
+## Installed tools
 
 Container image that contains following tools:
 
@@ -102,4 +104,4 @@ Install:
 
 Further stuff:
 
-- Create proper zshrc with alias
+- Prepare further shell functions.
