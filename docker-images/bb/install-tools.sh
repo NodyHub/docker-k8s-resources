@@ -16,6 +16,7 @@ sudo -E apt install -y \
       nload \
       software-properties-common \
       sudo \
+      tree \
       git \
       wget \
       whois \
