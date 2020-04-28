@@ -57,7 +57,8 @@ Other stuff
 
 ### Files
 ```
-/heapdump
+heapdump
+__clockwork
 ```
 
 ## Installed tools
