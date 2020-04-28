@@ -97,11 +97,18 @@ Container image that contains following tools:
 ## Todo
 
 Install:
-- https://github.com/devanshbatham/ParamSpider
-- https://github.com/stevenvachon/broken-link-checker
+- https://github.com/0ang3el/aem-hacker
 - https://github.com/s0md3v/Arjun
+- https://github.com/stevenvachon/broken-link-checker
 - https://github.com/bridgecrewio/checkov
+- https://github.com/internetwache/GitTools/tree/master/Dumper
+- https://github.com/RhinoSecurityLabs/GCPBucketBrute
+- https://github.com/devanshbatham/ParamSpider
+- https://github.com/ghostlulzhacks/s3brute
 - https://github.com/epinna/tplmap
+- https://github.com/appsecco/spaces-finder	
+- https://github.com/vincd/wappylyzer
+
 
 Further stuff:
 
