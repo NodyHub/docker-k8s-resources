@@ -48,6 +48,7 @@ Firefox Extensions:
 Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
+- [Relaxed JSON Beautifier](https://beautifier.io/)
 
 ## Wordlist
 
@@ -80,7 +81,7 @@ Container image that contains following tools:
 - [joomscan](https://github.com/rezasp/joomscan)
 - [jsearch](https://github.com/incogbyte/jsearch)
 - [knockpy](https://github.com/guelfoweb/knock) `knockpy -c <trgt.tld>`
-- [LinkFinder](https://github.com/GerbenJavado/LinkFinder) `linkfinder -o cli -i <js-url>`
+- [LinkFinder](https://github.com/GerbenJavado/LinkFinder) `linkfinder <js-url>`
 - [masscan](https://github.com/robertdavidgraham/masscan)
 - [massdns](https://github.com/blechschmidt/massdns)
 - [Nmap](https://nmap.org/)
