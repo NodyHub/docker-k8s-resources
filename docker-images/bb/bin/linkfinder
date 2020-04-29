@@ -1,0 +1,5 @@
+#!/bin/sh
+
+python3 ~/git/LinkFinder/linkfinder.py -o cli -i $*
+
+exit 0 
