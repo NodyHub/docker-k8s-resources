@@ -76,7 +76,7 @@ Container image that contains following tools:
 - [dirsearch](https://github.com/maurosoria/dirsearch) `dirsearch -u <url> -e <file-ext, e.g., php, asp, aspx, jsp, js, html, do, action>`
 - [droopscan](https://github.com/droope/droopescan)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
-- [gobuster](https://github.com/OJ/gobuster)
+- [gobuster](https://github.com/OJ/gobuster) - dirscan for some jucy files with alias `gojucy <url>`
 - [httprobe](https://github.com/tomnomnom/httprobe) `cat domains.txt | httprobe | tee httprobe.out`
 - [joomscan](https://github.com/rezasp/joomscan)
 - [jsearch](https://github.com/incogbyte/jsearch)
