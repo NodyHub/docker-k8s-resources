@@ -49,6 +49,7 @@ Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 - [Relaxed JSON Beautifier](https://beautifier.io/)
+- [List of bug bounty writeups (2012-2020)](https://pentester.land/list-of-bug-bounty-writeups.html)
 
 ## Wordlist
 
