@@ -104,6 +104,7 @@ Install:
 - https://github.com/stevenvachon/broken-link-checker
 - https://github.com/bridgecrewio/checkov
 - https://github.com/internetwache/GitTools/tree/master/Dumper
+- https://github.com/tarunkant/Gopherus
 - https://github.com/RhinoSecurityLabs/GCPBucketBrute
 - https://github.com/devanshbatham/ParamSpider
 - https://github.com/ghostlulzhacks/s3brute
