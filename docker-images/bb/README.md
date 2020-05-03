@@ -57,6 +57,7 @@ Other stuff
 - https://github.com/danielmiessler/SecLists
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://github.com/AvasDream/pentesting-dockerfiles#payloads
 
 ### Files
 ```
