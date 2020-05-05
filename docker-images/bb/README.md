@@ -52,6 +52,7 @@ Other stuff
 - [List of bug bounty writeups (2012-2020)](https://pentester.land/list-of-bug-bounty-writeups.html)
 - [Grep github](https://grep.app/)
 - [Param Miner](https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943)
+- [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz)
 
 ## Wordlist
 
