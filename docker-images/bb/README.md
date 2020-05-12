@@ -49,12 +49,17 @@ Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 - [Relaxed JSON Beautifier](https://beautifier.io/)
+- [List of bug bounty writeups (2012-2020)](https://pentester.land/list-of-bug-bounty-writeups.html)
+- [Grep github](https://grep.app/)
+- [Param Miner](https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943)
+- [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz)
 
 ## Wordlist
 
 - https://github.com/danielmiessler/SecLists
 - https://github.com/Plazmaz/leaky-repo
 - https://github.com/swisskyrepo/PayloadsAllTheThings
+- https://github.com/AvasDream/pentesting-dockerfiles#payloads
 
 ### Files
 ```
@@ -75,6 +80,7 @@ Container image that contains following tools:
 - [crtndstry](https://github.com/nahamsec/crtndstry) <- Broken
 - [dirsearch](https://github.com/maurosoria/dirsearch) `dirsearch -u <url> -e <file-ext, e.g., php, asp, aspx, jsp, js, html, do, action>`
 - [droopscan](https://github.com/droope/droopescan)
+- [gitdumper.sh](https://github.com/internetwache/GitTools/tree/master/Dumper)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster) - dirscan for some jucy files with alias `gojucy <url>`
 - [httprobe](https://github.com/tomnomnom/httprobe) `cat domains.txt | httprobe | tee httprobe.out`
@@ -103,6 +109,7 @@ Install:
 - https://github.com/stevenvachon/broken-link-checker
 - https://github.com/bridgecrewio/checkov
 - https://github.com/internetwache/GitTools/tree/master/Dumper
+- https://github.com/tarunkant/Gopherus
 - https://github.com/RhinoSecurityLabs/GCPBucketBrute
 - https://github.com/devanshbatham/ParamSpider
 - https://github.com/ghostlulzhacks/s3brute
