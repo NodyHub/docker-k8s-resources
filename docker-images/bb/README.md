@@ -78,7 +78,9 @@ Container image that contains following tools:
 - [awscli](https://github.com/aws/aws-cli)
 - [Chromium](https://www.chromium.org/)
 - [crtndstry](https://github.com/nahamsec/crtndstry) <- Broken
+- [crtsh](bin/crtsh) `crtsh <target.tld>`
 - [dirsearch](https://github.com/maurosoria/dirsearch) `dirsearch -u <url> -e <file-ext, e.g., php, asp, aspx, jsp, js, html, do, action>`
+- [domcol](bin/domcol) Combines sublist3r, crtsh, waybackurl and Amass (passive) to one output `domcol <target.tld>`
 - [droopscan](https://github.com/droope/droopescan)
 - [gitdumper.sh](https://github.com/internetwache/GitTools/tree/master/Dumper)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
@@ -91,6 +93,7 @@ Container image that contains following tools:
 - [masscan](https://github.com/robertdavidgraham/masscan)
 - [massdns](https://github.com/blechschmidt/massdns)
 - [Nmap](https://nmap.org/)
+- [noc](bin/noc) Script to remove coloring from cli output `echo "arbitrary tool that produces colored output" | noc`
 - [subjack](https://github.com/haccer/subjack)
 - [Sublist3r](https://github.com/aboul3la/Sublist3r) `sublist3r -d <domain.tld> -o sublist3r.out`
 - [sqlmap](https://github.com/sqlmapproject/sqlmap)
