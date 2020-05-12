@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "[i] Log data in $PWD/$1.amass.passive.out"
+>&2 echo "[i] Log data in $PWD/$1.amass.passive.out"
 
 # Collect data
 /bin/amass enum --passive -d $1 -json $PWD/$1.amass.passive.json.out

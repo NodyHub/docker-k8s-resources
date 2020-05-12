@@ -11,8 +11,10 @@ sudo -E apt install -y \
       apt-transport-https \
       ca-certificates \
       curl \
+      dnsutils \
       golang \
       htop \
+      iputils-ping \
       nload \
       software-properties-common \
       sudo \
@@ -116,6 +118,14 @@ echo "Install gitrob"
 go get github.com/michenriksen/gitrob
 
 ###########################################################################
+# Git Dump
+###########################################################################
+echo "Get Git Dump script for git"
+mkdir -p ~/bin
+wget -O ~/bin/gitdumper.sh https://raw.githubusercontent.com/internetwache/GitTools/master/Dumper/gitdumper.sh
+chmod +x ~/bin/gitdumper.sh 
+
+###########################################################################
 # Install JSParser
 # TODO: broken
 ###########################################################################
@@ -169,7 +179,7 @@ cd ~/git/
 echo "Installing knock.py"
 git clone https://github.com/guelfoweb/knock.git
 cd knock
-python setup.py install                                                                                                                                                                                                                       
+sudo python setup.py install
 cd ~/git/
 
 ###########################################################################

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+TARGET=$1
+
+sublist3r -d $TARGET -o $TARGET.sublist3r.out
+
+crtsh $TARGET | tee $TARGET.crtsh.out
+
+waybackurls $TARGET |  unfurl domain | sort -u | tee $TARGET.waybackurls.out
+
+amassp $TARGET | tee $TARGET.amassp.out
+
+cat $TARGET.*.out | sort -u | tee $TARGET.domains.txt
+
+exit 0
