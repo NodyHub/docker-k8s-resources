@@ -82,7 +82,7 @@ Container image that contains following tools:
 - [dirsearch](https://github.com/maurosoria/dirsearch) `dirsearch -u <url> -e <file-ext, e.g., php, asp, aspx, jsp, js, html, do, action>`
 - [domcol](bin/domcol) Combines sublist3r, crtsh, waybackurl and Amass (passive) to one output `domcol <target.tld>`
 - [droopscan](https://github.com/droope/droopescan)
-- [gitdumper.sh](https://github.com/internetwache/GitTools/tree/master/Dumper)
+- [gitdumper.sh](https://github.com/internetwache/GitTools/tree/master/Dumper) `gitdumper.sh https://target.tld/.git/ output_dir`
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster) - dirscan for some jucy files with alias `gojucy <url>`
 - [httprobe](https://github.com/tomnomnom/httprobe) `cat domains.txt | httprobe | tee httprobe.out`
