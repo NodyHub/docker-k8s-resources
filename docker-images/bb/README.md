@@ -49,6 +49,7 @@ Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 - [Relaxed JSON Beautifier](https://beautifier.io/)
+- [SAML Encoder](https://www.samltool.com/base64.php)
 - [List of bug bounty writeups (2012-2020)](https://pentester.land/list-of-bug-bounty-writeups.html)
 - [Grep github](https://grep.app/)
 - [Param Miner](https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943)
