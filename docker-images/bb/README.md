@@ -54,6 +54,7 @@ Other stuff
 - [Grep github](https://grep.app/)
 - [Param Miner](https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943)
 - [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz)
+- [How to Hunt Bugs in SAML](https://epi052.gitlab.io/notes-to-self/blog/2019-03-16-how-to-test-saml-a-methodology-part-three/)
 
 ## Wordlist
 
