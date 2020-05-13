@@ -49,12 +49,15 @@ Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 - [Relaxed JSON Beautifier](https://beautifier.io/)
-- [SAML Encoder](https://www.samltool.com/base64.php)
+- SAML
+  - [SAML Encoder](https://www.samltool.com/base64.php)
+  - [How to Hunt Bugs in SAML part 1](https://epi052.gitlab.io/notes-to-self/blog/2019-03-07-how-to-test-saml-a-methodology/)
+  - [How to Hunt Bugs in SAML part 1](https://epi052.gitlab.io/notes-to-self/blog/2019-03-13-how-to-test-saml-a-methodology-part-two/)
+  - [How to Hunt Bugs in SAML part 3](https://epi052.gitlab.io/notes-to-self/blog/2019-03-16-how-to-test-saml-a-methodology-part-three/)
 - [List of bug bounty writeups (2012-2020)](https://pentester.land/list-of-bug-bounty-writeups.html)
 - [Grep github](https://grep.app/)
 - [Param Miner](https://portswigger.net/bappstore/17d2949a985c4b7ca092728dba871943)
 - [can-i-take-over-xyz](https://github.com/EdOverflow/can-i-take-over-xyz)
-- [How to Hunt Bugs in SAML](https://epi052.gitlab.io/notes-to-self/blog/2019-03-16-how-to-test-saml-a-methodology-part-three/)
 
 ## Wordlist
 
