@@ -70,6 +70,7 @@ Other stuff
 ```
 heapdump
 __clockwork
+gmaps/js/proxy.php?url=http://12.0.0.1
 ```
 
 ## Installed tools
