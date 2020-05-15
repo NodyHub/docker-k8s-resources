@@ -126,6 +126,17 @@ wget -O ~/bin/gitdumper.sh https://raw.githubusercontent.com/internetwache/GitTo
 chmod +x ~/bin/gitdumper.sh 
 
 ###########################################################################
+# Git-hound
+###########################################################################
+echo "Get git-hound"
+mkdir git-hound
+cd git-hound
+wget https://github.com/tillson/git-hound/releases/download/v1.2.1/git-hound_1.2.1_Linux_x86_64.tar.gz
+tar xvzf git-hound*.tar.gz
+mv git-hound ~/bin/
+cd ~/git
+
+###########################################################################
 # Install JSParser
 # TODO: broken
 ###########################################################################
