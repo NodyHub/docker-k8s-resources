@@ -89,6 +89,7 @@ Container image that contains following tools:
 - [domcol](bin/domcol) Combines sublist3r, crtsh, waybackurl and Amass (passive) to one output `domcol <target.tld>`
 - [droopscan](https://github.com/droope/droopescan)
 - [gitdumper.sh](https://github.com/internetwache/GitTools/tree/master/Dumper) `gitdumper.sh https://target.tld/.git/ output_dir`
+- [git-hound](https://github.com/tillson/git-hound)
 - [gitrob](https://github.com/michenriksen/gitrob) <- [Access Token needed](https://github.com/michenriksen/gitrob#github-access-token)
 - [gobuster](https://github.com/OJ/gobuster) - dirscan for some jucy files with alias `gojucy <url>`
 - [httprobe](https://github.com/tomnomnom/httprobe) `cat domains.txt | httprobe | tee httprobe.out`
