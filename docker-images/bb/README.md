@@ -49,6 +49,7 @@ Other stuff
 
 - https://medium.com/@vignesh4303/collection-of-bug-bounty-tip-will-be-updated-daily-605911cfa248
 - [Relaxed JSON Beautifier](https://beautifier.io/)
+- [MIME Types](https://wiki.selfhtml.org/wiki/MIME-Type/%C3%9Cbersicht)
 - SAML
   - [SAML Encoder](https://www.samltool.com/base64.php)
   - [How to Hunt Bugs in SAML part 1](https://epi052.gitlab.io/notes-to-self/blog/2019-03-07-how-to-test-saml-a-methodology/)
