@@ -22,7 +22,7 @@ spec:
       value: www.google.com
     - name: LISTEN
       value: "443"
-    - name: TARGET
+    - name: SSL_DESTINATION
       value: "127.0.0.1:80"
   hostname: www
   subdomain: google

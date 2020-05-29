@@ -26,7 +26,7 @@ spec:
           value: hello
         - name: LISTEN
           value: "443"
-        - name: TARGET
+        - name: SSL_DESTINATION
           value: "127.0.0.1:80"
 ---
 apiVersion: v1

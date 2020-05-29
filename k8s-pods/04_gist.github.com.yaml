@@ -23,7 +23,7 @@ spec:
       value: gist.github.com
     - name: LISTEN
       value: "443"
-    - name: TARGET
+    - name: SSL_DESTINATION
       value: "127.0.0.1:80"
   subdomain: github
   hostname: gist
