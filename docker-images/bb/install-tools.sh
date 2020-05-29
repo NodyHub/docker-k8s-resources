@@ -74,7 +74,7 @@ cd ~/git/
 # Install AWS cli
 ###########################################################################
 echo "Install AWS cli"
-sudo -E apt install -y awscli
+sudo -E apt install -y awscli groff
 
 ###########################################################################
 # Install Amass
@@ -132,8 +132,18 @@ echo "Get git-hound"
 mkdir git-hound
 cd git-hound
 wget https://github.com/tillson/git-hound/releases/download/v1.2.1/git-hound_1.2.1_Linux_x86_64.tar.gz
+wget https://raw.githubusercontent.com/tillson/git-hound/master/config.example.yml
 tar xvzf git-hound*.tar.gz
-mv git-hound ~/bin/
+cp git-hound ~/bin/
+cd ~/git
+
+###########################################################################
+# Github dork
+###########################################################################
+echo "Get github-dork"
+git clone https://github.com/techgaun/github-dorks.git
+cd github-dorks
+pip install -r requirements.txt
 cd ~/git
 
 ###########################################################################
@@ -297,6 +307,5 @@ cd ~/git/
 ###########################################################################
 echo "Clean up"
 sudo apt autoremove -y
-
 
 exit 0
