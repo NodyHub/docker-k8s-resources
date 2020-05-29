@@ -20,9 +20,9 @@ spec:
     env:
     - name: DOMAIN
       value: www.google.com
-    - name: SSL_LISTEN
+    - name:i LISTEN
       value: "443"
-    - name: SSL_DESTINATION
+    - name: TARGET
       value: "127.0.0.1:80"
   hostname: www
   subdomain: google

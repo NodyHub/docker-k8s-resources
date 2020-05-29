@@ -21,9 +21,9 @@ spec:
     env:
     - name: DOMAIN
       value: gist.github.com
-    - name: SSL_LISTEN
+    - name: LISTEN
       value: "443"
-    - name: SSL_DESTINATION
+    - name: TARGET
       value: "127.0.0.1:80"
   subdomain: github
   hostname: gist
