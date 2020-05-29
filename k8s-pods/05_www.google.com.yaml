@@ -20,7 +20,7 @@ spec:
     env:
     - name: DOMAIN
       value: www.google.com
-    - name: LISTEN
+    - name: SSL_LISTEN
       value: "443"
     - name: SSL_DESTINATION
       value: "127.0.0.1:80"
