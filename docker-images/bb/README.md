@@ -127,6 +127,7 @@ Install:
 - https://github.com/epinna/tplmap
 - https://github.com/appsecco/spaces-finder	
 - https://github.com/vincd/wappylyzer
+- https://github.com/andresriancho/enumerate-iam
 
 
 Further stuff:
