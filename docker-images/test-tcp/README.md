@@ -12,5 +12,5 @@ If the environment variable `REPEAT_AFTER` is not specified, the container stops
 
 ## TODO
 
-- [ ] Kubernetes Deployment file
+- [x] Kubernetes Deployment file
 - [ ] Helm Chart

@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-tcp
+  name: test-tcp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-tcp
+  template:
+    metadata:
+      labels:
+        app: test-tcp
+    spec:
+      containers:
+        - name: test-tcp
+          image: docker.io/nodyd/test-tcp:latest
+          env:
+          - name: REPEAT_AFTER
+            value: "60"
+          volumeMounts:
+          - name: "cfg"
+            mountPath: "/test/cfg"
+      volumes:
+        - name: cfg
+          configMap:
+            name: test-tcp
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-tcp
+data:
+  allow.lst: |
+    1.1.1.1:80
+  deny.lst: |
+    mongo:27017
+
