@@ -15,6 +15,7 @@ The following resources are from time-to-time refred in lectures, workshops or t
 - [Kubernetes Networking](https://sookocheff.com/post/kubernetes/understanding-kubernetes-networking-model/)
 - [SecComp](https://itnext.io/seccomp-in-kubernetes-part-i-7-things-you-should-know-before-you-even-start-97502ad6b6d6)
 - [Recommended Steps to Secure a DigitalOcean Kubernetes Cluster | DigitalOcean](https://www.digitalocean.com/community/tutorials/recommended-steps-to-secure-a-digitalocean-kubernetes-cluster)
+- [Kubernetes Seccomp Operator](https://github.com/saschagrunert/seccomp-operator)
 
 ### Cluster Analysis
 - [CIS Kubernetes Benchmark](https://www.cisecurity.org/benchmark/kubernetes/)
