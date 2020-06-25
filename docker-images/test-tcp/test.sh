@@ -8,7 +8,7 @@ do
   echo "[$(date +"%d/%m/%Y %H:%M:%S") | DEBUG] Check hosts from allow.lst to be available"
 
   # Loop over the file `allow.lst`
-  for l in $(cat allow.lst)
+  for l in $(cat cfg/allow.lst)
   do
 
     # Try to connect 
@@ -31,7 +31,7 @@ do
   echo "[$(date +"%d/%m/%Y %H:%M:%S") | DEBUG] Check hosts from deny.lst to be not available"
 
   # Loop over the file `deny.lst`
-  for l in $(cat deny.lst)
+  for l in $(cat cfg/deny.lst)
   do
 
     # Try to connect
