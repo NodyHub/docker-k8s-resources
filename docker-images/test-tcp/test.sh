@@ -51,7 +51,7 @@ do
   done
 
   # Check if the test should be performed continiously
-  if [ ! -z "$REPEAT_AFTER" ]
+  if [[ ! -z "$REPEAT_AFTER" && $REPEAT_AFTER != 0 ]]
   then
     
     # wait configured timeout
