@@ -8,22 +8,22 @@ do
   echo "[$(date +"%d/%m/%Y %H:%M:%S") | DEBUG] Check hosts from allow.lst to be available"
 
   # Loop over the file `allow.lst`
-  for l in $(cat cfg/allow.lst)
+  for target in $(cat cfg/allow.lst)
   do
 
     # Try to connect 
-    echo foo | ncat $(echo $l | tr ":" " ") > /dev/null 2>&1
+    echo foo | ncat $(echo $target | tr ":" " ") > /dev/null 2>&1
 
     # Evaluate previous command result
     if [[ $? != 0 ]]
     then
 
       # Exit sctipt with error code if it is not possible to connect
-      echo "[$(date +"%d/%m/%Y %H:%M:%S") | ERROR] $l is not accessible, but should be !!"
+      echo "[$(date +"%d/%m/%Y %H:%M:%S") | ERROR] $target is not accessible, but should be !!"
       exit 1
 
     else
-      echo "[$(date +"%d/%m/%Y %H:%M:%S") | INFO] $l is accessible"
+      echo "[$(date +"%d/%m/%Y %H:%M:%S") | INFO] $target is accessible"
     fi
   done
 
@@ -31,20 +31,20 @@ do
   echo "[$(date +"%d/%m/%Y %H:%M:%S") | DEBUG] Check hosts from deny.lst to be not available"
 
   # Loop over the file `deny.lst`
-  for l in $(cat cfg/deny.lst)
+  for target in $(cat cfg/deny.lst)
   do
 
     # Try to connect
-    echo foo | ncat $(echo $l | tr ":" " ") > /dev/null 2>&1
+    echo foo | ncat $(echo $target | tr ":" " ") > /dev/null 2>&1
 
     # Evaluate previous command result 
     if [[ $? != 0 ]]
     then
-      echo "[$(date +"%d/%m/%Y %H:%M:%S") | INFO] $l not accessible"
+      echo "[$(date +"%d/%m/%Y %H:%M:%S") | INFO] $target not accessible"
     else
 
       # Exit sctipt with error code if it is possible to connect
-      echo "[$(date +"%d/%m/%Y %H:%M:%S") | ERROR] $l is accessible, but should not be !!"
+      echo "[$(date +"%d/%m/%Y %H:%M:%S") | ERROR] $target is accessible, but should not be !!"
       exit 1
 
     fi
