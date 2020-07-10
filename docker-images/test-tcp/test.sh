@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -eo pipefail
+
 # Start endless loop
 while :
 do
