@@ -32,6 +32,7 @@ The following resources are from time-to-time refred in lectures, workshops or t
 ### Background
 - [AppArmor](https://www.secjuice.com/apparmor-say-goodbye-to-remote-command-execution/)
 - [GitOps](https://sysdig.com/blog/gitops-k8s-security-configwatch/)
+- [Keyctl-unmask: "Going Florida" on The State Of Containerizing Linux Keyrings](https://www.antitree.com/2020/07/keyctl-unmask-going-florida-on-the-state-of-containerizing-linux-keyrings/)
 
 ### Research // Talks
 - [DevSecOps](https://insinuator.net/2019/11/basta-autumn-2019/)
