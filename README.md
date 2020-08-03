@@ -9,6 +9,7 @@ The following resources are from time-to-time refred in lectures, workshops or t
 
 ### Additional Kubernetes readings
 - [RBAC](https://www.cncf.io/blog/2018/08/01/demystifying-rbac-in-kubernetes/)
+- [Kubernetes RBAC 101: Authentication](https://kublr.com/blog/kubernetes-rbac-101-authentication/)
 - [RAFT Algorithm](https://raft.github.io/)
 - [Trouble Shooting Kubernetes](https://learnk8s.io/troubleshooting-deployments)
 - [Kubernetes Certificate Rotation](https://kubernetes.io/docs/tasks/tls/certificate-rotation/)
