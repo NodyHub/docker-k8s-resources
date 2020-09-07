@@ -1,6 +1,6 @@
 
 ## Docker & Kubernetes Readings
-The following resources are from time-to-time refred in lectures, workshops or talks that have been performed in the past. For the sake of ease the following categories contains the references.
+The following resources are from time-to-time referred in lectures, workshops or talks that have been performed in the past. For the sake of ease the following categories contains the references.
 
 
 ### Docker Analysis
