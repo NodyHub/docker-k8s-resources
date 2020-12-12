@@ -20,7 +20,7 @@ spec:
     env:
     - name: DOMAIN
       value: www.google.com
-    - name:i LISTEN
+    - name: LISTEN
       value: "443"
     - name: TARGET
       value: "127.0.0.1:80"
