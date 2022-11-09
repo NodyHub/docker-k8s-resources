@@ -15,7 +15,7 @@ spec:
         run: hello
     spec:
       containers:
-      - image: docker.ui/nodyd/hello:latest
+      - image: docker.io/nodyd/hello:latest
         imagePullPolicy: Always
         name: hello
       - image: docker.io/nodyd/ssl-fwd:latest
