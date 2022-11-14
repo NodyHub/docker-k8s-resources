@@ -47,3 +47,8 @@ spec:
     targetPort: 443
   selector:
     run: hello
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: hello
