@@ -14,6 +14,7 @@ spec:
       labels:
         run: hello
     spec:
+      serviceAccountName: hello
       containers:
       - image: docker.io/nodyd/hello:latest
         imagePullPolicy: Always
